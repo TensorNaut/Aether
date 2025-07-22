@@ -1,134 +1,174 @@
-# 🌕 **LunaXplore** 🌑
+# 🌌 AETHER: Illuminating the Unseen 🌗
 
 <div align='center'>
   <img src="https://img.shields.io/badge/Project%20Status-Active-brightgreen" alt="Project Status">
-  <img src="https://img.shields.io/badge/License-All%20Rights%20Reserved-red" alt="License">
-  <img src="https://img.shields.io/badge/Python-3.11%2B-yellow" alt="Python Version">
-  <img src="https://img.shields.io/badge/Contributions-Welcome-orange" alt="Contributions Welcome">
+  <img src="https://img.shields.io/badge/License-MIT-blue" alt="License">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blueviolet" alt="Python Version">
+  <img src="https://img.shields.io/badge/Framework-PyTorch-orange" alt="Framework">
+  <img src="https://img.shields.io/badge/Contributions-Welcome-ff69b4" alt="Contributions Welcome">
 </div>
 
 <div align='center'>
-  <img src="https://img.shields.io/github/contributors/TechieSamosa/LunaXplore?style=for-the-badge&color=blue" alt="GitHub contributors">
-  <img src="https://img.shields.io/github/issues-closed-raw/TechieSamosa/LunaXplore?style=for-the-badge&color=brightgreen" alt="GitHub Closed issues">
-  <img src="https://img.shields.io/github/issues-pr/TechieSamosa/LunaXplore?style=for-the-badge&color=aqua" alt="GitHub PR Open">
-  <img src="https://img.shields.io/github/issues-pr-closed-raw/TechieSamosa/LunaXplore?style=for-the-badge&color=blue" alt="GitHub PR closed">
-  <img src="https://img.shields.io/github/languages/count/TechieSamosa/LunaXplore?style=for-the-badge&color=brightgreen" alt="GitHub language count">
-  <img src="https://img.shields.io/github/last-commit/TechieSamosa/LunaXplore?style=for-the-badge&color=blue" alt="GitHub last commit">
-  <img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?style=for-the-badge" alt="Maintained">
-  <img src="https://img.shields.io/github/repo-size/TechieSamosa/LunaXplore?style=for-the-badge&color=aqua" alt="Repo Size">
+  <img src="https://img.shields.io/github/contributors/TechieSamosa/Aether?style=for-the-badge&color=blue" alt="GitHub contributors">
+  <img src="https://img.shields.io/github/last-commit/TechieSamosa/Aether?style=for-the-badge&color=brightgreen" alt="GitHub last commit">
+  <img src="https://img.shields.io/github/issues-pr/TechieSamosa/Aether?style=for-the-badge&color=aqua" alt="GitHub PR Open">
+    <img src="https://img.shields.io/github/repo-size/TechieSamosa/Aether?style=for-the-badge&color=lightgrey" alt="Repo Size">
 </div>
 
----
+</div>
 
-## 🚀 **Project Overview**
+-----
 
-**LunaXplore** is an innovative project aimed at enhancing low-light images from the **Permanently Shadowed Regions (PSR)** of lunar craters, captured by the **Orbiter High-Resolution Camera (OHRC)** onboard Chandrayaan-2. The PSR areas, located near the lunar poles, are perpetually shadowed, making it challenging to obtain high Signal-to-Noise Ratio (SNR) images suitable for exploration and scientific analysis.
+## 🚀 Overview
 
-## 🌟 **Proposed Solution**
+**AETHER** is a deep learning framework designed to solve one of the most significant challenges in planetary science: visualizing the **Permanently Shadowed Regions (PSRs)** of the Moon. These areas, which haven't seen sunlight in billions of years, are prime locations for water ice but are notoriously difficult to image. Using a rich suite of data from ISRO's **Chandrayaan-2** mission, AETHER employs **Self-Supervised Learning** to enhance faint signals, transforming noisy, low-light patches into scientifically valuable maps.
 
-**LunaXplore** combines advanced **Deep Learning** and **Image Processing** techniques to enhance PSR images. Using a custom workflow that includes **Contrast Enhancement**, **Denoising Algorithms**, and **Low-Light Generative Adversarial Networks (GANs)**, this project produces high-resolution PSR image maps of the lunar poles, crucial for:
-- 🛬 **Landing Site Selection**: Identifying scientifically valuable and safe sites for future lunar missions.
-- 🏞 **Geomorphological Studies**: Enabling detailed analysis of lunar surface features to support geological research.
+-----
 
-## 🛠️ **Technical Approach**
+## ✨ Key Features
 
-### **Technologies Used**
-- **Programming Languages**: Python (for deep learning and image processing), MATLAB (optional, for certain image processing tasks)
-- **Frameworks/Libraries**: TensorFlow and Keras for GANs, OpenCV for image preprocessing, Retinex Theory-based custom algorithms for color balancing
-- **Hardware Requirements**: High-performance computing (HPC) resources with GPU support are recommended for efficient model training and processing of large datasets
+  * **Self-Supervised Enhancement**: Leverages a novel pretext task to teach the model lunar topology from unlabeled data, eliminating the need for hand-annotated training sets.
+  * **Multi-Modal Data Fusion**: Intelligently integrates optical (OHRC), radar (DFSAR), elemental (CLASS), and spectral (IIRS) data to create a holistic and information-rich view of the lunar surface.
+  * **High-Fidelity Generative Model**: Utilizes a fine-tuned Generative Adversarial Network (GAN) to reconstruct shadowed terrain with plausible details, maximizing the Signal-to-Noise Ratio (SNR).
+  * **Mission-Ready Outputs**: Produces high-resolution, georeferenced polar maps critical for landing site selection, resource prospecting, and geomorphological studies.
 
-### **Methodology**
+-----
 
-1. **Data Acquisition and Preprocessing**:
-   - **Data Sources**: Primary data from OHRC images, with auxiliary data from DFSAR (terrain), IIRS (infrared spectra), CLASS (elemental abundances), and SPICE (geometric and timing data) to add spatial, spectral, and contextual information.
-   - **Preprocessing**: Normalize, reduce noise, and align coordinates using SPICE data for accurate mapping of PSR regions. 
+## 🛠️ Technical Architecture
 
-2. **Image Enhancement Pipeline**:
-   - **Low-Light Image Denoising**: Use Non-Local Means and deep-learning-based DnCNN models to reduce noise while retaining essential features.
-   - **Contrast Enhancement**: Apply Contrast Limited Adaptive Histogram Equalization (CLAHE) to enhance visibility in shadowed areas.
-   - **Low-Light GAN Model**: A custom GAN is developed to enhance image quality by generating high-resolution, detail-enhanced images from low-light inputs.
+AETHER is built with a modern, research-focused tech stack designed for high-performance computing and reproducibility.
 
-3. **Retinex Theory Application**:
-   - **Theory Integration**: Utilize Retinex-based processing to simulate human vision by balancing light and color, enhancing details in low-light regions.
+  * **Core Framework**: **PyTorch** for its flexibility and dynamic computation graphs.
+  * **Data Handling**: **GDAL** & **Rasterio** for geospatial data processing, **Pandas** for metadata management.
+  * **Image Processing**: **OpenCV** and **Scikit-Image** for preprocessing and classical enhancement algorithms.
+  * **Models & Training**: **Hugging Face Accelerate** for distributed training and **Weights & Biases** for experiment tracking.
+  * **Hardware**: Designed for **NVIDIA GPUs** using **CUDA** for accelerated model training.
 
-4. **Auxiliary Data Integration**:
-   - **DFSAR Overlay**: Integrate radar-based terrain details to enhance structural feature visibility within PSR regions.
-   - **IIRS and CLASS Overlays**: Use spectral and elemental data overlays to highlight geological compositions for comprehensive analysis.
+-----
 
-5. **Spherical Visualization of the Lunar Surface**:
-   - **Map Creation**: Organize enhanced PSR images into a polar map format, providing a comprehensive lunar visualization with PSR areas highlighted.
+## 🧠 Methodology
 
-6. **Output**: The final product is a detailed, high-resolution PSR image map, accessible via a user-friendly interface for mission planning, scientific research, and exploration.
+Our pipeline transforms raw, heterogeneous data into clear, scientifically-valuable maps. The cornerstone of AETHER is its ability to fuse diverse data sources, providing our model with a rich, multi-faceted understanding of the lunar surface.
 
-## 💡 **Unique Features**
+### 1\. Multi-Modal Data Ingestion & Fusion
 
-- **High-Resolution Lunar PSR Mapping**: Provides detailed, high-quality visualizations of PSR regions for scientific and mission-planning use.
-- **Multi-Spectral and SAR Data Fusion**: Allows optional integration with Synthetic Aperture Radar (SAR) and infrared data for enhanced analysis of structural and compositional details.
+We treat the lunar surface as a multi-layered dataset. Each instrument provides a unique layer of information, and by combining them, we create a "super-image" that offers far more context than a simple photograph.
 
-## 🧠 **Feasibility and Viability**
+  * 🛰️ **Primary Optical Data (OHRC):** This is the high-resolution visual canvas we aim to enhance. It provides the base imagery, which suffers from low signal in shadowed regions.
+  * 🪨 **Structural & Texture Data (DFSAR):** The radar data acts as our structural blueprint. Unaffected by shadows, it reveals surface roughness and physical topography, telling the model the *shape* of the ground.
+  * 🧪 **Elemental Composition Data (CLASS):** This provides the chemical fingerprint. By mapping elements like Silicon, Iron, and Magnesium, CLASS tells the model *what the ground is made of*, allowing it to connect chemistry to texture.
+  * 💧 **Mineralogical & Volatile Data (IIRS):** The infrared spectrometer is key for identifying specific minerals and, crucially, the spectral signature of water ice and hydroxyl molecules. This layer guides the model toward areas of high scientific interest.
+  * 🗺️ **Geometric & Navigational Data (SPICE):** The essential Rosetta Stone. SPICE kernels provide the precise position, orientation, and timing data required to take all the above layers and align them perfectly into a single, cohesive coordinate system.
 
-### **Challenges**
-- **Complexity of Low-Light Data**: Processing low-light lunar images with limited PSR data samples requires specialized training and enhancement techniques.
-- **High Computational Requirements**: Large datasets and GAN model processing require significant computational resources.
+> **The Fusion Process:** All data layers are georeferenced using SPICE and stacked into a multi-channel tensor. Instead of a 3-channel (RGB) image, our model processes a rich data cube, enabling an informed, context-aware enhancement.
 
-### **Strategies**
-- **Model Optimization and Regularization**: Use GAN regularization techniques to prevent overfitting and optimize training.
-- **High-Performance Computing**: Leverage GPU support and HPC resources to streamline data processing and model training.
+### 2\. Self-Supervised Pre-training (The Core Engine)
 
-## 🌍 **Impact and Benefits**
+The model learns the fundamental patterns of lunar terrain without labels.
 
-**LunaXplore** aims to:
-- **Advance Lunar Science**: Contribute valuable high-resolution data for lunar geological studies.
-- **Support Future Missions**: Aid in the identification of optimal landing sites by producing clear images of previously obscured PSR regions.
-- **Promote Technological Innovation in Space Imaging**: Pioneer advancements in AI and image processing tailored to space exploration.
+  * **Pretext Task**: We employ a "masked autoencoder" approach. The model is fed a multi-channel data tensor with random patches masked out and is trained to reconstruct the missing information. To succeed, it must learn the intrinsic relationships between radar texture, optical shadows, and chemical composition.
 
-## 📁 **Repository Structure**
+### 3\. Generative Fine-Tuning
 
-- `/data`: Contains example datasets (low-light OHRC images) and auxiliary data from DFSAR, IIRS, and CLASS for demonstration purposes.
-- `/models`: Stores pre-trained GAN models and configuration files for model inference.
-- `/src`: Source code for preprocessing, enhancement algorithms, GAN training, and integration with auxiliary data.
-- `/docs`: Documentation files, including setup instructions and references.
-- `/examples`: Sample outputs and visualization files for demonstration.
+The pre-trained encoder from the SSL phase is used as the backbone of a custom Generative Adversarial Network (GAN).
 
-*Note*: Certain datasets may require separate access permissions (e.g., DFSAR or IIRS data), available via ISSDC or relevant databases.
+  * This GAN is specifically fine-tuned on the task of **low-light enhancement**. It takes a noisy OHRC image as input and generates a clean, high-SNR version, guided by the deep contextual understanding from the fused data.
 
-## 🔍 **Sample Results**
+### 4\. Map Synthesis & Visualization
 
-To provide users with a reference, sample PSR enhancement outputs are included in the `/examples` folder. These examples demonstrate the expected quality of the enhanced images after processing with the LunaXplore pipeline.
+The enhanced image tiles are stitched together and projected into a polar stereographic map.
 
-## 🎯 **Contribution Guidelines**
+  * The final output is a high-resolution map highlighting previously unseen details within the Moon's Permanently Shadowed Regions.
 
-We welcome contributions from the community! To contribute:
+-----
 
-1. **Fork the Repository**: Fork this repository to your GitHub account.
-2. **Open an Issue**: Before starting any work, open an issue describing your proposed changes.
-3. **Create a Pull Request**: Once ready, create a pull request (PR) from your forked repository to the main repository. Reference the related issue in your PR description.
-4. **Follow Coding Standards**: Maintain consistent code styling and include comments for clarity.
+## 🌍 Impact & Applications
 
-Upon approval, contributions will be merged, and your name will be added to the list of contributors.
+AETHER directly contributes to the next era of lunar exploration by:
 
-## 🏅 **Contributors**
+  * **Enabling Safer Landings**: Providing mission planners with clear, detailed views of potential landing sites for robotic and crewed missions.
+  * **Accelerating Scientific Discovery**: Unlocking vast, unexplored regions for geological analysis and the search for water ice.
+  * **Advancing Planetary AI**: Pioneering the use of self-supervised techniques for low-data, extreme-environment scenarios in space exploration.
 
-<a href="https://github.com/TechieSamosa/LunaXplore/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TechieSamosa/LunaXplore" />
+-----
+
+## 📂 Repository Structure
+
+```
+aether/
+│
+├── data/               # Scripts for downloading and preprocessing public data
+├── notebooks/          # Jupyter notebooks for exploration and visualization
+├── models/             # Pre-trained model weights and configurations
+├── src/                # Main source code
+│   ├── data_loader.py  # Data ingestion and fusion pipeline
+│   ├── ssl_trainer.py  # Self-supervised pre-training module
+│   ├── gan_enhancer.py # GAN fine-tuning and inference module
+│   └── projection.py   # Geospatial mapping and output generation
+│
+├── tests/              # Unit and integration tests
+├── scripts/            # Helper scripts for training, inference, etc.
+└── requirements.txt    # Project dependencies
+```
+
+-----
+
+## 🚀 Getting Started
+
+### **Prerequisites**
+
+  * Python 3.10+
+  * Anaconda or Miniconda
+  * NVIDIA GPU with CUDA 11.8+
+
+### **Installation**
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/TechieSamosa/AETHER.git
+    cd AETHER
+    ```
+2.  Create and activate a conda environment:
+    ```bash
+    conda env create -f environment.yml
+    conda activate aether
+    ```
+3.  Run inference on a sample image:
+    ```bash
+    python scripts/enhance.py --input /path/to/sample.img --output /path/to/enhanced.png --model models/aether_v1.pth
+    ```
+
+-----
+
+## 🎯 How to Contribute
+
+We welcome contributions from the global community of researchers and developers\!
+
+1.  **Fork the repo** and create your branch from `main`.
+2.  **Open an issue** to discuss the change you wish to make.
+3.  **Make your changes** and ensure all tests pass.
+4.  **Submit a pull request** with a clear description of your contribution.
+
+-----
+
+## 📚 References & Acknowledgements
+
+This work builds upon the state-of-the-art in deep learning and planetary science. We gratefully acknowledge the data provided by the **ISRO Science Data Archive (ISDA)**.
+
+  * **"Masked Autoencoders Are Scalable Vision Learners"** (He et al., 2021)
+  * **"SinGAN: Learning a Generative Model from a Single Natural Image"** (Shaham et al., 2019)
+  * **Chandrayaan-2 Mission Data Handbook**, ISRO
+  * **"Analysis of Permanently Shadowed Regions of the Moon using LRO and Chandrayaan-2 Data"**
+
+-----
+## 🏅 Contributors
+
+A huge thank you to all the contributors who have dedicated their time and expertise to making AETHER possible!
+
+<a href="https://github.com/TechieSamosa/Aether/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=TechieSamosa/Aether" />
 </a>
+-----
+## 📄 License
 
-## 📚 **Research and References**
-
-- **"LLNet: A Deep Autoencoder Approach to Natural Low-light Image Enhancement"**
-- **"Automated Lunar Crater Identification with Chandrayaan-2 TMC-2 Images using Deep Convolutional Neural Networks"**
-- **"A Low-light Image Enhancement Model Based on Anisotropic Weighted Exponential Local Derivatives"**
-- **"A Physics-based GAN for Single Image Defogging"**
-- **"Low-light Image Enhancement Algorithm Based on Retinex and GAN"**
-- **"Imaging and Analysis of Lunar Polar Regions: Challenges and Techniques"**
-- **"Enhancement of Low-Light Satellite Images using Deep Convolutional Neural Networks"**
-
-## 🔒 **License**
-
-All rights reserved. Redistribution, modification, or use of this code for any commercial, competitive, hackathon, personal, or academic project purposes
-
- is strictly prohibited without the express written permission of the authors. Unauthorized use, reproduction, or distribution of this code or any project components is forbidden to protect the project’s integrity and intended purpose.
-
----
-
-Together, let’s unlock the mysteries of the Moon’s hidden regions! 🌙✨
+This project is licensed under the **MIT License**. See the `LICENSE` file for details. This permissive license allows for wide use and collaboration.
